@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#168fc4">
+    <title>Кампусная барахолка</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="Кампусная барахолка, наверх">
+            <span class="brand-mark">К</span>
+            <span>своим — своё</span>
+        </a>
+        <span class="header-note">студенческая барахолка <span class="header-dot"></span> Бишкек</span>
+    </header>
+
+    <main class="container" id="top">
+        <section class="intro" aria-labelledby="pageTitle">
+            <div>
+                <p class="eyebrow">Кампусная доска объявлений</p>
+                <h1 id="pageTitle">Нашёл — <span>передай дальше.</span></h1>
+                <p class="intro-copy">Вещи, которые ещё пригодятся. И люди рядом, которым они нужны.</p>
+            </div>
+        </section>
+
+        <div class="content-layout">
+            <section class="panel" aria-labelledby="formTitle">
+                <div class="section-title">
+                    <span class="section-number">01</span>
+                    <h2 id="formTitle">Добавить объявление</h2>
+                </div>
+
+                <form id="adForm">
+                    <div class="form-group">
+                        <label for="title">Что отдаёшь?</label>
+                        <input type="text" id="title" name="title" required placeholder="Например, учебники по физике">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Цена <span class="label-hint">в сомах</span></label>
+                        <input type="number" id="price" name="price" step="0.01" min="0" required
+                            placeholder="Например, 500">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Пара слов о вещи</label>
+                        <textarea id="description" name="description" required
+                            placeholder="Состояние, детали, где забрать..."></textarea>
+                    </div>
+
+                    <div class="form-group image-group">
+                        <label for="image">Фото <span class="label-hint">по желанию</span></label>
+                        <input type="file" id="image" name="image" accept="image/*">
+                    </div>
+
+                    <button type="submit" id="submitBtn">Опубликовать объявление <span
+                            aria-hidden="true">↗</span></button>
+                    <div id="statusMsg" class="status-msg" aria-live="polite"></div>
+                </form>
+            </section>
+
+            <section class="listings" aria-labelledby="listTitle">
+                <div class="listings-heading">
+                    <div>
+                        <p class="eyebrow">Из кампуса и обратно</p>
+                        <h2 id="listTitle">Уже на доске</h2>
+                    </div>
+                    <span class="listing-mark" aria-hidden="true">↘</span>
+                </div>
+                <div id="adsList" class="grid" aria-live="polite">
+                    <p class="list-message">Загружаем объявления...</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
